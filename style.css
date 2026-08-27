@@ -1,105 +1,98 @@
-/* =========================
-   RESET
-========================= */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-/* =========================
-   BODY
-========================= */
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #eef2e8, #f8f9f5);
+    font-family: Arial, sans-serif;
+    background: #eef1e8;
     color: #20251d;
-    min-height: 100vh;
 }
 
 
 /* =========================
-   HEADER
+   HEADER - ARMY THEME
 ========================= */
 
 header {
-    background:
-        linear-gradient(rgba(25, 40, 20, 0.94), rgba(48, 70, 35, 0.94)),
-        radial-gradient(circle at top, #66784b, #263a1f);
+    background: linear-gradient(
+        135deg,
+        #263a1f,
+        #4b5d2a,
+        #263a1f
+    );
 
     color: #ffffff;
     text-align: center;
 
-    padding: 55px 20px 50px;
+    padding: 45px 180px 45px 20px;
 
     border-bottom: 5px solid #c5a028;
 
     position: relative;
+
+    min-height: 175px;
+
     overflow: hidden;
 }
 
 
-/* Decorative lines */
-
-header::before {
-    content: "";
-    position: absolute;
-
-    width: 220px;
-    height: 220px;
-
-    border: 2px solid rgba(197, 160, 40, 0.18);
-    border-radius: 50%;
-
-    top: -100px;
-    left: -80px;
-}
+/* =========================
+   ARMY LOGO - TOP RIGHT
+========================= */
 
 header::after {
     content: "";
+
     position: absolute;
 
-    width: 300px;
-    height: 300px;
+    top: 10px;
+    right: 20px;
 
-    border: 2px solid rgba(197, 160, 40, 0.15);
-    border-radius: 50%;
+    width: 150px;
+    height: 135px;
 
-    bottom: -180px;
-    right: -80px;
+    background-image: url("armylogo-removebg-preview.png");
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-size: contain;
+
+    z-index: 10;
+
+    pointer-events: none;
 }
 
 
-/* Header Title */
+/* =========================
+   HEADER TITLE
+========================= */
 
 header h1 {
-    font-size: 42px;
+    font-size: 38px;
+
+    margin-bottom: 10px;
+
     font-weight: 800;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 
-    margin-bottom: 12px;
-
-    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
-
-    position: relative;
-    z-index: 2;
+    text-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.35);
 }
 
 
-/* Header Subtitle */
+/* =========================
+   HEADER SUBTITLE
+========================= */
 
 header p {
-    font-size: 18px;
-    color: #eee8c8;
+    font-size: 17px;
 
-    letter-spacing: 0.5px;
-
-    position: relative;
-    z-index: 2;
+    color: #e8e4c9;
 }
 
 
@@ -108,47 +101,45 @@ header p {
 ========================= */
 
 main {
-    width: 92%;
-    max-width: 1200px;
+    width: 90%;
 
-    margin: 45px auto;
-}
+    max-width: 1100px;
 
-
-/* Section Title */
-
-main h2 {
-    font-size: 28px;
-
-    color: #263a1f;
-
-    margin-bottom: 30px;
-
-    padding: 14px 18px;
-
-    border-left: 6px solid #c5a028;
-
-    background: rgba(255, 255, 255, 0.75);
-
-    border-radius: 0 10px 10px 0;
-
-    box-shadow: 0 4px 15px rgba(38, 58, 31, 0.08);
+    margin: 40px auto;
 }
 
 
 /* =========================
-   PDF GRID
+   MAIN TITLE
+========================= */
+
+main h2 {
+    margin-bottom: 25px;
+
+    color: #263a1f;
+
+    border-left: 6px solid #c5a028;
+
+    padding-left: 12px;
+
+    font-size: 28px;
+}
+
+
+/* =========================
+   PDF LIST
 ========================= */
 
 .pdf-list {
     display: grid;
 
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(280px, 1fr)
-    );
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(260px, 1fr)
+        );
 
-    gap: 25px;
+    gap: 20px;
 }
 
 
@@ -157,63 +148,32 @@ main h2 {
 ========================= */
 
 .pdf-card {
-    background: rgba(255, 255, 255, 0.96);
+    background: #ffffff;
 
-    padding: 27px;
+    padding: 25px;
 
-    border-radius: 16px;
+    border-radius: 12px;
 
-    border: 1px solid #e0e5d9;
-
-    border-top: 5px solid #4b5d2a;
+    border-top: 4px solid #4b5d2a;
 
     box-shadow:
-        0 5px 15px rgba(38, 58, 31, 0.08);
+        0 5px 20px
+        rgba(38, 58, 31, 0.12);
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+    transition: all 0.3s ease;
 
     position: relative;
-
-    overflow: hidden;
 }
 
-
-/* Small decorative gold line */
-
-.pdf-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 0;
-    height: 5px;
-
-    background: #c5a028;
-
-    transition: width 0.3s ease;
-}
-
-
-/* Hover */
 
 .pdf-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-7px);
 
     border-top-color: #c5a028;
 
     box-shadow:
-        0 15px 35px rgba(38, 58, 31, 0.18);
-}
-
-
-.pdf-card:hover::before {
-    width: 100%;
+        0 12px 30px
+        rgba(38, 58, 31, 0.22);
 }
 
 
@@ -222,17 +182,11 @@ main h2 {
 ========================= */
 
 .pdf-card h3 {
+    margin-bottom: 20px;
+
     color: #263a1f;
 
-    font-size: 18px;
-
-    line-height: 1.55;
-
-    min-height: 58px;
-
-    margin-bottom: 22px;
-
-    font-weight: 700;
+    line-height: 1.5;
 }
 
 
@@ -245,23 +199,17 @@ main h2 {
 
     text-decoration: none;
 
-    padding: 11px 16px;
+    padding: 10px 14px;
 
     margin-right: 5px;
 
-    margin-bottom: 5px;
-
-    border-radius: 8px;
+    border-radius: 7px;
 
     font-size: 14px;
 
-    font-weight: 700;
+    font-weight: bold;
 
-    transition:
-        all 0.25s ease;
-
-    box-shadow:
-        0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
 }
 
 
@@ -270,11 +218,7 @@ main h2 {
 ========================= */
 
 .pdf-card a:first-of-type {
-    background: linear-gradient(
-        135deg,
-        #4b632f,
-        #263a1f
-    );
+    background: #3f5426;
 
     color: white;
 
@@ -283,16 +227,11 @@ main h2 {
 
 
 .pdf-card a:first-of-type:hover {
-    background: linear-gradient(
-        135deg,
-        #263a1f,
-        #182511
-    );
+    background: #263a1f;
 
-    transform: translateY(-2px);
+    border-color: #263a1f;
 
-    box-shadow:
-        0 6px 14px rgba(38, 58, 31, 0.25);
+    transform: scale(1.04);
 }
 
 
@@ -301,11 +240,7 @@ main h2 {
 ========================= */
 
 .pdf-card a:last-of-type {
-    background: linear-gradient(
-        135deg,
-        #e2d58a,
-        #c5a028
-    );
+    background: #d6c36a;
 
     color: #263a1f;
 
@@ -314,18 +249,11 @@ main h2 {
 
 
 .pdf-card a:last-of-type:hover {
-    background: linear-gradient(
-        135deg,
-        #c5a028,
-        #a88718
-    );
+    background: #c5a028;
 
     color: #ffffff;
 
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 6px 14px rgba(160, 130, 20, 0.25);
+    transform: scale(1.04);
 }
 
 
@@ -334,25 +262,17 @@ main h2 {
 ========================= */
 
 footer {
-    background: linear-gradient(
-        135deg,
-        #182511,
-        #263a1f
-    );
+    background: #1c2917;
 
     color: #e8e4c9;
 
     text-align: center;
 
-    padding: 28px 20px;
+    padding: 25px;
 
-    margin-top: 70px;
+    margin-top: 60px;
 
     border-top: 4px solid #c5a028;
-
-    font-size: 15px;
-
-    letter-spacing: 0.5px;
 }
 
 
@@ -360,82 +280,61 @@ footer {
    MOBILE
 ========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
     header {
-        padding: 42px 15px 40px;
+        padding: 30px 90px 30px 15px;
+
+        min-height: 125px;
     }
 
-    header h1 {
-        font-size: 30px;
-        letter-spacing: 1px;
-    }
-
-    header p {
-        font-size: 15px;
-    }
-
-    main {
-        width: 92%;
-        margin: 30px auto;
-    }
-
-    main h2 {
-        font-size: 23px;
-        padding: 12px 14px;
-    }
-
-    .pdf-list {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .pdf-card {
-        padding: 22px;
-    }
-
-    .pdf-card h3 {
-        font-size: 17px;
-        min-height: auto;
-    }
-
-    .pdf-card a {
-        padding: 10px 13px;
-        font-size: 13px;
-    }
-
-    footer {
-        margin-top: 45px;
-        padding: 22px 15px;
-    }
-}
-
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media (max-width: 400px) {
 
     header h1 {
         font-size: 26px;
     }
 
+
     header p {
         font-size: 14px;
     }
 
-    main h2 {
-        font-size: 21px;
+
+    header::after {
+        top: 8px;
+
+        right: 5px;
+
+        width: 80px;
+
+        height: 80px;
     }
+
+
+    main {
+        width: 92%;
+
+        margin: 30px auto;
+    }
+
+
+    main h2 {
+        font-size: 23px;
+    }
+
+
+    .pdf-list {
+        grid-template-columns: 1fr;
+    }
+
 
     .pdf-card {
-        padding: 19px;
+        padding: 22px;
     }
 
+
     .pdf-card a {
-        display: block;
-        text-align: center;
-        margin-right: 0;
+        padding: 9px 12px;
+
+        font-size: 13px;
     }
 }
