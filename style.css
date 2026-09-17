@@ -14,9 +14,147 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #eef2e8, #f7f8f3);
+
+    background: linear-gradient(
+        135deg,
+        #eef2e8,
+        #f7f8f3
+    );
+
     color: #20251d;
+
     min-height: 100vh;
+
+    position: relative;
+}
+
+
+/* =========================
+   ARMY BACKGROUND SLIDESHOW
+========================= */
+
+.army-background {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    z-index: -10;
+
+    background: #eef2e8;
+}
+
+
+/* Dark/light overlay */
+
+.army-background::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+/* Common slide */
+
+.army-slide {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    opacity: 0;
+
+    animation: armySlideshow 20s infinite;
+
+    transform: scale(1.03);
+}
+
+
+/* Image 1 */
+
+.slide1 {
+    background-image: url("army.jpg");
+
+    animation-delay: 0s;
+}
+
+
+/* Image 2 */
+
+.slide2 {
+    background-image: url("army2.webp");
+
+    animation-delay: 5s;
+}
+
+
+/* Image 3 */
+
+.slide3 {
+    background-image: url("army3.avif");
+
+    animation-delay: 10s;
+}
+
+
+/* Image 4 */
+
+.slide4 {
+    background-image: url("army4.jpg");
+
+    animation-delay: 15s;
+}
+
+
+/* Slideshow */
+
+@keyframes armySlideshow {
+
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 
@@ -88,7 +226,8 @@ header::after {
     width: 150px;
     height: 140px;
 
-    background-image: url("armylogo-removebg-preview.png");
+    background-image:
+        url("armylogo-removebg-preview.png");
 
     background-repeat: no-repeat;
 
@@ -101,7 +240,9 @@ header::after {
     pointer-events: none;
 
     filter:
-        drop-shadow(0 5px 8px rgba(0, 0, 0, 0.35));
+        drop-shadow(
+            0 5px 8px rgba(0, 0, 0, 0.35)
+        );
 }
 
 
@@ -172,6 +313,10 @@ main {
     margin: 45px auto;
 
     min-height: 400px;
+
+    position: relative;
+
+    z-index: 1;
 }
 
 
@@ -192,11 +337,12 @@ main h2 {
 
     font-weight: 800;
 
-    background: linear-gradient(
-        to right,
-        rgba(197, 160, 40, 0.12),
-        transparent
-    );
+    background:
+        linear-gradient(
+            to right,
+            rgba(197, 160, 40, 0.12),
+            transparent
+        );
 
     border-radius: 0 8px 8px 0;
 }
@@ -232,12 +378,15 @@ main h2 {
 
     border-radius: 15px;
 
-    border: 1px solid rgba(75, 93, 42, 0.15);
+    border:
+        1px solid
+        rgba(75, 93, 42, 0.15);
 
     border-top: 5px solid #4b5d2a;
 
     box-shadow:
-        0 8px 25px rgba(38, 58, 31, 0.10);
+        0 8px 25px
+        rgba(38, 58, 31, 0.10);
 
     transition:
         transform 0.3s ease,
@@ -261,9 +410,11 @@ main h2 {
     width: 70px;
     height: 70px;
 
-    background: rgba(197, 160, 40, 0.08);
+    background:
+        rgba(197, 160, 40, 0.08);
 
-    border-radius: 0 0 0 70px;
+    border-radius:
+        0 0 0 70px;
 }
 
 
@@ -277,7 +428,8 @@ main h2 {
     border-top-color: #c5a028;
 
     box-shadow:
-        0 15px 35px rgba(38, 58, 31, 0.20);
+        0 15px 35px
+        rgba(38, 58, 31, 0.20);
 }
 
 
@@ -323,7 +475,8 @@ main h2 {
         all 0.25s ease;
 
     box-shadow:
-        0 3px 8px rgba(0, 0, 0, 0.10);
+        0 3px 8px
+        rgba(0, 0, 0, 0.10);
 }
 
 
@@ -341,7 +494,8 @@ main h2 {
 
     color: #ffffff;
 
-    border: 1px solid #3f5426;
+    border:
+        1px solid #3f5426;
 }
 
 
@@ -356,7 +510,8 @@ main h2 {
     transform: translateY(-2px);
 
     box-shadow:
-        0 6px 15px rgba(38, 58, 31, 0.30);
+        0 6px 15px
+        rgba(38, 58, 31, 0.30);
 }
 
 
@@ -374,7 +529,8 @@ main h2 {
 
     color: #263a1f;
 
-    border: 1px solid #c5a028;
+    border:
+        1px solid #c5a028;
 }
 
 
@@ -391,7 +547,8 @@ main h2 {
     transform: translateY(-2px);
 
     box-shadow:
-        0 6px 15px rgba(197, 160, 40, 0.35);
+        0 6px 15px
+        rgba(197, 160, 40, 0.35);
 }
 
 
@@ -415,14 +572,20 @@ footer {
 
     margin-top: 70px;
 
-    border-top: 4px solid #c5a028;
+    border-top:
+        4px solid #c5a028;
 
     font-size: 14px;
 
     line-height: 1.7;
 
     box-shadow:
-        0 -5px 20px rgba(0, 0, 0, 0.08);
+        0 -5px 20px
+        rgba(0, 0, 0, 0.08);
+
+    position: relative;
+
+    z-index: 2;
 }
 
 
@@ -438,6 +601,7 @@ footer a {
     transition: 0.3s ease;
 }
 
+
 footer a:hover {
     color: #ffffff;
 }
@@ -450,7 +614,11 @@ footer a:hover {
 @media (max-width: 900px) {
 
     header {
-        padding: 45px 150px 45px 20px;
+        padding:
+            45px
+            150px
+            45px
+            20px;
     }
 
     header h1 {
@@ -459,6 +627,7 @@ footer a:hover {
 
     header::after {
         width: 120px;
+
         height: 115px;
 
         right: 20px;
@@ -475,6 +644,7 @@ footer a:hover {
                 minmax(250px, 1fr)
             );
     }
+
 }
 
 
@@ -485,7 +655,11 @@ footer a:hover {
 @media (max-width: 600px) {
 
     header {
-        padding: 35px 85px 35px 15px;
+        padding:
+            35px
+            85px
+            35px
+            15px;
 
         min-height: 145px;
 
@@ -580,6 +754,7 @@ footer a:hover {
 
         font-size: 13px;
     }
+
 }
 
 
@@ -593,24 +768,30 @@ footer a:hover {
         padding-right: 75px;
     }
 
+
     header h1 {
         font-size: 22px;
     }
+
 
     header p {
         font-size: 12px;
     }
 
+
     header::after {
         width: 65px;
+
         height: 65px;
     }
+
 
     .pdf-card a {
         padding: 8px 10px;
 
         font-size: 12px;
     }
+
 }
 
 
