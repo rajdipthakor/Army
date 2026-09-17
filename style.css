@@ -1,6 +1,6 @@
-/* =========================
-   GLOBAL RESET
-========================= */
+/* =========================================
+   GENERAL
+========================================= */
 
 * {
     margin: 0;
@@ -15,19 +15,23 @@ html {
 body {
     font-family: Arial, sans-serif;
 
-    background: linear-gradient(135deg, #eef2e8, #f7f8f3);
+    background: linear-gradient(
+        135deg,
+        #eef2e8,
+        #f7f8f3
+    );
 
     color: #20251d;
 
     min-height: 100vh;
 
-    position: relative;
+    overflow-x: hidden;
 }
 
 
-/* =========================
+/* =========================================
    ARMY BACKGROUND SLIDESHOW
-========================= */
+========================================= */
 
 .army-background {
     position: fixed;
@@ -46,26 +50,28 @@ body {
 }
 
 
-/* IMAGE OVERLAY
-   Image હવે વધારે clear દેખાશે
-*/
+/* Light overlay */
 
 .army-background::after {
     content: "";
+
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     background: rgba(255, 255, 255, 0.12);
+
     z-index: 5;
+
     pointer-events: none;
 }
 
 
-/* =========================
-   COMMON SLIDE
-========================= */
+/* Each slide */
 
 .army-slide {
     position: absolute;
@@ -77,9 +83,7 @@ body {
     height: 100%;
 
     background-size: cover;
-
     background-position: center;
-
     background-repeat: no-repeat;
 
     opacity: 0;
@@ -90,9 +94,9 @@ body {
 }
 
 
-/* =========================
-   IMAGE 1
-========================= */
+/* =========================================
+   SLIDES IMAGES
+========================================= */
 
 .slide1 {
     background-image: url("army.jpg");
@@ -100,32 +104,17 @@ body {
     animation-delay: 0s;
 }
 
-
-/* =========================
-   IMAGE 2
-========================= */
-
 .slide2 {
     background-image: url("army2.webp");
 
     animation-delay: 5s;
 }
 
-
-/* =========================
-   IMAGE 3
-========================= */
-
 .slide3 {
     background-image: url("army3.avif");
 
     animation-delay: 10s;
 }
-
-
-/* =========================
-   IMAGE 4
-========================= */
 
 .slide4 {
     background-image: url("army4.jpg");
@@ -134,9 +123,9 @@ body {
 }
 
 
-/* =========================
+/* =========================================
    SLIDESHOW ANIMATION
-========================= */
+========================================= */
 
 @keyframes armySlideshow {
 
@@ -162,527 +151,436 @@ body {
 }
 
 
-/* =========================
-   HEADER - ARMY PREMIUM THEME
-========================= */
+/* =========================================
+   HEADER
+========================================= */
 
 header {
     position: relative;
 
+    min-height: 175px;
+
+    padding: 45px 180px;
+
     background:
+        url("satyamev-removebg-preview.png")
+        left 45px center / 105px auto
+        no-repeat,
+
         linear-gradient(
             135deg,
-            rgba(20, 35, 15, 0.98),
-            rgba(66, 84, 36, 0.97),
-            rgba(25, 40, 18, 0.98)
+            #263a1f,
+            #1d3218
         );
 
-    color: #ffffff;
+    color: white;
 
     text-align: center;
 
-    padding: 55px 200px 55px 25px;
+    border-bottom: 4px solid #c5a028;
 
-    border-bottom: 5px solid #d1ad32;
-
-    min-height: 190px;
+    z-index: 5;
 
     overflow: hidden;
-
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.18);
 }
 
 
-/* Decorative Army Pattern */
+/* =========================================
+   HEADER TITLE
+========================================= */
 
-header::before {
-    content: "";
+header h1 {
+    margin: 0;
 
-    position: absolute;
+    font-size: 42px;
 
-    width: 500px;
-    height: 500px;
+    font-weight: 800;
 
-    top: -250px;
-    left: -150px;
+    color: #ffffff;
 
-    background: rgba(255, 255, 255, 0.04);
+    letter-spacing: 1px;
 
-    border-radius: 50%;
-
-    pointer-events: none;
+    text-shadow:
+        3px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
 
-/* =========================
-   ARMY LOGO - TOP RIGHT
-========================= */
+/* =========================================
+   HEADER SUBTITLE
+========================================= */
+
+header p {
+    margin-top: 18px;
+
+    font-size: 19px;
+
+    color: #f5e8b0;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   RIGHT SIDE EXISTING ARMY LOGO
+========================================= */
 
 header::after {
     content: "";
 
     position: absolute;
 
-    top: 20px;
-    right: 30px;
+    right: 25px;
+    top: 50%;
 
-    width: 150px;
-    height: 140px;
+    transform: translateY(-50%);
 
-    background-image: url("armylogo-removebg-preview.png");
+    width: 100px;
+    height: 100px;
 
-    background-repeat: no-repeat;
-
-    background-position: center;
+    background-image:
+        url("armylogo-removebg-preview.png");
 
     background-size: contain;
 
-    z-index: 10;
+    background-position: center;
 
-    pointer-events: none;
+    background-repeat: no-repeat;
 
-    filter:
-        drop-shadow(0 5px 8px rgba(0, 0, 0, 0.35));
+    z-index: 2;
 }
 
 
-/* =========================
-   HEADER TITLE
-========================= */
-
-header h1 {
-    position: relative;
-
-    font-size: 40px;
-
-    margin-bottom: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-
-    text-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.5);
-}
-
-
-/* Small Gold Line */
-
-header h1::after {
-    content: "";
-
-    display: block;
-
-    width: 90px;
-    height: 3px;
-
-    background: #d1ad32;
-
-    margin: 12px auto 0;
-
-    border-radius: 10px;
-}
-
-
-/* =========================
-   HEADER SUBTITLE
-========================= */
-
-header p {
-    position: relative;
-
-    font-size: 17px;
-
-    color: #eee8c9;
-
-    line-height: 1.6;
-
-    margin-top: 10px;
-}
-
-
-/* =========================
-   MAIN SECTION
-========================= */
+/* =========================================
+   MAIN CONTENT
+========================================= */
 
 main {
+    position: relative;
+
     width: 90%;
 
-    max-width: 1150px;
+    max-width: 1200px;
 
     margin: 45px auto;
 
-    min-height: 400px;
+    z-index: 2;
 }
 
 
-/* =========================
-   MAIN TITLE
-========================= */
+/* =========================================
+   PDF LIST TITLE
+========================================= */
 
 main h2 {
-    margin-bottom: 30px;
+    display: inline-block;
 
-    color: #263a1f;
+    margin-bottom: 25px;
+
+    padding: 10px 20px;
 
     border-left: 7px solid #c5a028;
 
-    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.72);
 
-    font-size: 29px;
+    color: #263a1f;
+
+    font-size: 30px;
 
     font-weight: 800;
 
-    background:
-        linear-gradient(
-            to right,
-            rgba(197, 160, 40, 0.12),
-            transparent
-        );
+    text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.15);
 
-    border-radius: 0 8px 8px 0;
+    border-radius: 2px;
 }
 
 
-/* =========================
-   PDF LIST
-========================= */
+/* =========================================
+   PDF LIST GRID
+========================================= */
 
 .pdf-list {
     display: grid;
 
     grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(280px, 1fr)
-        );
+        repeat(3, 1fr);
 
     gap: 25px;
 }
 
 
-/* =========================
+/* =========================================
    PDF CARD
-========================= */
+========================================= */
 
 .pdf-card {
     position: relative;
 
-    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 27px;
 
-    padding: 28px;
+    min-height: 175px;
 
-    border-radius: 15px;
+    background:
+        rgba(255, 255, 255, 0.88);
 
-    border: 1px solid rgba(75, 93, 42, 0.15);
+    border-radius: 14px;
 
-    border-top: 5px solid #4b5d2a;
+    border-top: 4px solid #3d5a26;
 
     box-shadow:
-        0 8px 25px rgba(38, 58, 31, 0.10);
+        0 8px 20px
+        rgba(35, 50, 25, 0.15);
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+        box-shadow 0.3s ease;
 
     overflow: hidden;
 }
 
 
-/* Card Gold Decoration */
+/* Card decoration */
 
 .pdf-card::before {
     content: "";
 
     position: absolute;
 
-    top: 0;
-    right: 0;
+    right: -35px;
+    top: -35px;
 
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
 
-    background: rgba(197, 160, 40, 0.08);
+    background:
+        rgba(197, 160, 40, 0.08);
 
-    border-radius: 0 0 0 70px;
+    border-radius: 50%;
 }
 
 
-/* =========================
+/* =========================================
    CARD HOVER
-========================= */
+========================================= */
 
 .pdf-card:hover {
-    transform: translateY(-8px);
-
-    border-top-color: #c5a028;
+    transform: translateY(-7px);
 
     box-shadow:
-        0 15px 35px rgba(38, 58, 31, 0.20);
+        0 15px 30px
+        rgba(35, 50, 25, 0.25);
 }
 
 
-/* =========================
-   PDF TITLE
-========================= */
+/* =========================================
+   PDF CARD TITLE
+========================================= */
 
 .pdf-card h3 {
     position: relative;
 
-    margin-bottom: 22px;
+    margin-bottom: 25px;
 
-    color: #263a1f;
-
-    line-height: 1.5;
+    color: #142b16;
 
     font-size: 19px;
+
+    line-height: 1.5;
 
     font-weight: 700;
 }
 
 
-/* =========================
-   BUTTON AREA
-========================= */
+/* PDF icon */
+
+.pdf-card h3::first-letter {
+    color: #e31b23;
+}
+
+
+/* =========================================
+   OPEN PDF BUTTON
+========================================= */
 
 .pdf-card a {
     display: inline-block;
 
-    text-decoration: none;
+    padding: 11px 20px;
 
-    padding: 11px 16px;
-
-    margin-right: 7px;
-
-    border-radius: 8px;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-    transition: all 0.25s ease;
-
-    box-shadow:
-        0 3px 8px rgba(0, 0, 0, 0.10);
-}
-
-
-/* =========================
-   OPEN PDF BUTTON
-========================= */
-
-.pdf-card a:first-of-type {
     background:
         linear-gradient(
             135deg,
-            #4b632d,
+            #3d5a26,
             #263a1f
         );
 
-    color: #ffffff;
+    color: white;
 
-    border: 1px solid #3f5426;
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    border-radius: 8px;
+
+    border: 1px solid #263a1f;
+
+    box-shadow:
+        0 4px 8px
+        rgba(0, 0, 0, 0.18);
+
+    transition:
+        all 0.25s ease;
 }
 
 
-.pdf-card a:first-of-type:hover {
+/* Button hover */
+
+.pdf-card a:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #526f32,
+            #344d22
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 13px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    position: relative;
+
+    margin-top: 60px;
+
+    padding: 25px 20px;
+
     background:
         linear-gradient(
             135deg,
             #263a1f,
-            #172411
+            #1d3218
         );
 
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 6px 15px rgba(38, 58, 31, 0.30);
-}
-
-
-/* =========================
-   DOWNLOAD BUTTON
-========================= */
-
-.pdf-card a:last-of-type {
-    background:
-        linear-gradient(
-            135deg,
-            #e3d27c,
-            #c5a028
-        );
-
-    color: #263a1f;
-
-    border: 1px solid #c5a028;
-}
-
-
-.pdf-card a:last-of-type:hover {
-    background:
-        linear-gradient(
-            135deg,
-            #c5a028,
-            #a88818
-        );
-
-    color: #ffffff;
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 6px 15px rgba(197, 160, 40, 0.35);
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background:
-        linear-gradient(
-            135deg,
-            #172411,
-            #263a1f
-        );
-
-    color: #e8e4c9;
+    color: white;
 
     text-align: center;
 
-    padding: 28px 20px;
-
-    margin-top: 70px;
-
     border-top: 4px solid #c5a028;
 
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    box-shadow:
-        0 -5px 20px rgba(0, 0, 0, 0.08);
+    z-index: 5;
 }
 
 
-/* =========================
-   FOOTER HOVER LINKS
-========================= */
+footer p {
+    margin: 5px 0;
 
-footer a {
-    color: #e3d27c;
+    font-size: 15px;
 
-    text-decoration: none;
-
-    transition: 0.3s ease;
+    color: #f5e8b0;
 }
 
 
-footer a:hover {
+footer strong {
     color: #ffffff;
 }
 
 
-/* =========================
+/* =========================================
    TABLET
-========================= */
+========================================= */
 
-@media (max-width: 900px) {
-
-    header {
-        padding: 45px 150px 45px 20px;
-    }
-
-    header h1 {
-        font-size: 34px;
-    }
-
-    header::after {
-        width: 120px;
-        height: 115px;
-
-        right: 20px;
-    }
-
-    main {
-        width: 92%;
-    }
+@media (max-width: 1000px) {
 
     .pdf-list {
         grid-template-columns:
-            repeat(
-                2,
-                minmax(250px, 1fr)
-            );
+            repeat(2, 1fr);
+    }
+
+    header {
+        padding:
+            40px 130px;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    header::after {
+        right: 15px;
+
+        width: 85px;
+        height: 85px;
     }
 }
 
 
-/* =========================
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
     header {
-        padding: 35px 85px 35px 15px;
+        min-height: 150px;
 
-        min-height: 145px;
+        padding:
+            35px 90px;
 
-        border-bottom-width: 4px;
+        background-size:
+            70px auto,
+            cover;
+
+        background-position:
+            left 10px center,
+            center;
     }
 
 
     header h1 {
-        font-size: 25px;
+        font-size: 28px;
 
-        letter-spacing: 0.5px;
-    }
-
-
-    header h1::after {
-        width: 60px;
-
-        height: 2px;
-
-        margin-top: 8px;
+        line-height: 1.25;
     }
 
 
     header p {
-        font-size: 13px;
+        margin-top: 12px;
 
-        line-height: 1.5;
+        font-size: 15px;
     }
 
 
     header::after {
-        top: 15px;
+        right: 10px;
 
-        right: 8px;
-
-        width: 75px;
-
-        height: 75px;
+        width: 65px;
+        height: 65px;
     }
 
 
     main {
         width: 92%;
 
-        margin: 30px auto;
+        margin:
+            30px auto;
     }
 
 
     main h2 {
-        font-size: 22px;
+        font-size: 24px;
 
-        padding: 8px 12px;
-
-        margin-bottom: 22px;
+        padding:
+            8px 15px;
     }
 
 
@@ -694,77 +592,80 @@ footer a:hover {
 
 
     .pdf-card {
-        padding: 22px;
+        min-height: 150px;
 
-        border-radius: 12px;
+        padding: 25px 22px;
     }
 
 
     .pdf-card h3 {
         font-size: 17px;
-
-        margin-bottom: 18px;
     }
 
 
     .pdf-card a {
-        padding: 9px 12px;
+        padding:
+            10px 17px;
 
         font-size: 13px;
-
-        margin-bottom: 5px;
     }
 
 
     footer {
-        margin-top: 45px;
+        margin-top: 40px;
 
-        padding: 22px 15px;
-
-        font-size: 13px;
+        padding: 20px 15px;
     }
-
 }
 
 
-/* =========================
-   VERY SMALL MOBILE
-========================= */
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
 
     header {
-        padding-right: 75px;
+        padding:
+            30px 70px;
     }
+
 
     header h1 {
         font-size: 22px;
     }
 
+
     header p {
-        font-size: 12px;
+        font-size: 13px;
     }
+
 
     header::after {
-        width: 65px;
-        height: 65px;
+        width: 50px;
+        height: 50px;
+
+        right: 5px;
     }
 
-    .pdf-card a {
-        padding: 8px 10px;
 
-        font-size: 12px;
+    header {
+        background-size:
+            55px auto,
+            cover;
+
+        background-position:
+            left 5px center,
+            center;
     }
 
-}
+
+    main h2 {
+        font-size: 21px;
+    }
 
 
-/* =========================
-   TEXT SELECTION
-========================= */
-
-::selection {
-    background: #c5a028;
-
-    color: #ffffff;
+    .pdf-card {
+        padding: 22px 18px;
+    }
 }
